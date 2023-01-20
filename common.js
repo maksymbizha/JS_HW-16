@@ -55,17 +55,19 @@ let users = [
     }
 ]
 
+
 const userFilterBalance = users.filter(user => user.balance > '$2,000.00');
-// console.log(userFilterBalance)
+console.log(userFilterBalance)
+
 
 const userPhoneNumber = userFilterBalance.map(user => user.phone);
 alert(`Номера телефонів користовачів у яких баланс більше 2000 доларів ${userPhoneNumber.join(', \n')}`);
 
+const  balanceToNumber = (balance) => Number(balance.replace(/[^0-9\.]+/g, ''))
 
 const userSumBalance = userFilterBalance.reduce((acc, user) => {
-
     console.log(acc)
-    return acc +=user.balance;
+    return acc + user.balance;
 }, 0);
 
 
@@ -86,22 +88,5 @@ const userSumBalance = userFilterBalance.reduce((acc, user) => {
 
 
 
-// const arr= ['20', null, undefined, '5', {}, 'fwefwefwe', 10]
-//
-//
-// console.log(arr)
-// console.log(res)
-//
-// function doMath(x, znak, y) {
-//     if (~znak.search(/[^+\-*/%^]/) || znak.length !== 1) return 'Ви ввелі не валідні дані.';
-//     return eval(x + znak.replace('^', '**') + y)
-// }
-// const x = +prompt('Введите x');
-// const y = +prompt('Введите y');
-// const znak = prompt('Введите знак');
-//
-// if(x >= 0 && y >= 0){
-//     alert(doMath(x, znak, y))
-// }else {
-//     alert('Ви ввелі не валідні дані.')
-// }
+
+
